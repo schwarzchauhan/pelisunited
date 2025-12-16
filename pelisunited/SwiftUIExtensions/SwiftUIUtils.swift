@@ -40,5 +40,6 @@ extension Image {
         self
             .resizable()
             .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

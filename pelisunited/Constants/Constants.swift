@@ -13,6 +13,9 @@ struct Constants {
     static let search = "Search"
     static let download = "Download"
     static let trendingMovies = "Trending Movies"
+    static let trendingTV = "Trending TV"
+    static let topRatedMovies = "Top Rated Movies"
+    static let topRatedTV = "Top Rated TV"    
 }
 
 struct SystemImageConstants {

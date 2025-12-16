@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HorizontalListView: View{
-    let header = Constants.trendingMovies
+    let header: String
     let titles = [ConstantsUrl.testTitleUrl, ConstantsUrl.testTitleUrl2, ConstantsUrl.testTitleUrl3]
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -34,5 +34,5 @@ struct HorizontalListView: View{
 }
 
 #Preview {
-    HorizontalListView()
+    HorizontalListView(header: Constants.trendingMovies)
 }
