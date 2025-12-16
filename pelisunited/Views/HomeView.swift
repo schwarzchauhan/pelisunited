@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomView: View {
+struct HomeView: View {
     var heroTestTitle = ConstantsUrl.testTitleUrl
                     
     var body: some View {
@@ -22,7 +22,13 @@ struct HomView: View {
                         ProgressView()
                     }
                     .frame(width: geo.size.width, height: geo.size.height * 0.7)
-                    .background(.orange)
+                    .overlay {
+                        LinearGradient(stops: [Gradient.Stop(color: .clear, location: 0.7),
+                                               Gradient.Stop(color: .gradient, location: 1)],
+                                       startPoint: .top,
+                                       endPoint: .bottom)
+                    }
+                    
                     
                     HStack {
                         Button {
@@ -55,5 +61,5 @@ struct HomView: View {
 }
 
 #Preview {
-    HomView()
+    HomeView()
 }
