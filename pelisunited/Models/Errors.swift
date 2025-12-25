@@ -23,3 +23,17 @@ enum APIConfigError: Error, LocalizedError {
         }
     }
 }
+
+enum NetworkError: Error, LocalizedError {
+    case badURLResponse(underlyingError: Error)
+    case missinConfig
+    
+    var errorDescription: String? {
+        switch self {
+        case .badURLResponse(let underlyingError):
+            return "Failed to parse URL response: \(underlyingError.localizedDescription)"
+        case .missinConfig:
+            return "Missing API configuration..."
+        }
+    }
+}
