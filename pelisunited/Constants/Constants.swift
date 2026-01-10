@@ -29,6 +29,17 @@ struct ConstantsUrl {
     static let testTitleUrl = "https://adro.com.co/wp-content/uploads/2025/03/0762.png"
     static let testTitleUrl2 = "https://upload.wikimedia.org/wikipedia/en/2/23/Tito_Double_P_-_Inc%C3%B3modo.png"
     static let testTitleUrl3 = "https://upload.wikimedia.org/wikipedia/commons/5/58/Lojanguaegsel_merelinnustiku_loendusel.jpg"
+    
+    static let postersURLStart = "https://image.tmdb.org/t/p/w500"
+    
+    static func addPosterPath(to titles: inout[Title]) {
+        for index in titles.indices {
+            if let path = titles[index].posterPath {
+                titles[index].posterPath = ConstantsUrl.postersURLStart + path
+//                titles[index].posterPath = Constants.postersURLStart.appending(path)
+            }
+        }
+    }
 }
 
 
