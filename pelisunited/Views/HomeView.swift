@@ -56,9 +56,9 @@ struct HomeView: View {
                         .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
                         
                         HorizontalListView(header: Constants.trendingMovies, titles: viewModel.trendingMovies)
-    //                    HorizontalListView(header: Constants.trendingTV)
-    //                    HorizontalListView(header: Constants.topRatedMovies)
-    //                    HorizontalListView(header: Constants.topRatedTV)
+                        HorizontalListView(header: Constants.trendingTV, titles: viewModel.trendingTV)
+                        HorizontalListView(header: Constants.topRatedMovies, titles: viewModel.topRatedMovies)
+                        HorizontalListView(header: Constants.topRatedTV, titles: viewModel.topRatedTV)
                     }
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                     .background(Color.gray.opacity(0.3))
