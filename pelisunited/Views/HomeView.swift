@@ -19,6 +19,7 @@ struct HomeView: View {
                     EmptyView()
                 case .fetching:
                     ProgressView()
+                        .frame(width: geo.size.width, height: geo.size.height)
                 case .success:
                     LazyVStack(spacing: 0) {
                         AsyncImage(url: URL(string: heroTestTitle)) { image in
