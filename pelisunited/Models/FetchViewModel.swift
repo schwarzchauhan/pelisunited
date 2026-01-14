@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 @Observable
 class FetchViewModel {
     enum FetchStatus {
@@ -22,8 +24,9 @@ class FetchViewModel {
     func getTitles() async {
         homeStatus = .fetching
         
-        do {
-            trendingMovies = try await dataFetcher.fetchTitle(for: "movie")
+        do {  
+            trendingMovies = try await dataFetcher.fetchTitle(for: "movie", by: "trending")
+//            trendingMovies = try await dataFetcher.fetchTitle(for: "movie", by: "top_rated")
             homeStatus = .success
         } catch {
             print(error)
