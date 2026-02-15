@@ -53,6 +53,8 @@ class FetchViewModel {
                 print(error)
                 homeStatus = .failed(underlayingError: error)
             }
+        } else {
+            homeStatus = .success
         }
         
         

@@ -57,10 +57,18 @@ struct HomeView: View {
                             .frame(maxWidth: .infinity)
                             .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
                             
-                            HorizontalListView(header: Constants.trendingMovies, titles: viewModel.trendingMovies)
-                            HorizontalListView(header: Constants.trendingTV, titles: viewModel.trendingTV)
-                            HorizontalListView(header: Constants.topRatedMovies, titles: viewModel.topRatedMovies)
-                            HorizontalListView(header: Constants.topRatedTV, titles: viewModel.topRatedTV)
+                            HorizontalListView(header: Constants.trendingMovies, titles: viewModel.trendingMovies) { title in
+                                titleDetailPath.append(title)
+                            }
+                            HorizontalListView(header: Constants.trendingTV, titles: viewModel.trendingTV) { title in
+                                titleDetailPath.append(title)
+                            }
+                            HorizontalListView(header: Constants.topRatedMovies, titles: viewModel.topRatedMovies) { title in
+                                titleDetailPath.append(title)
+                            }
+                            HorizontalListView(header: Constants.topRatedTV, titles: viewModel.topRatedTV) { title in
+                                titleDetailPath.append(title)
+                            }
                         }
                         .navigationDestination(for: Title.self) { title in
                             TitleDetailView(title: title)

@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct APIConfig: Decodable {
+public struct APIConfig: Decodable {
     let tmdbBaseURL: URL
     let tmdbAPIKey: String
+    let youtubeBaseURL: String
     
-    static let shared: APIConfig? = {
+    public static let shared: APIConfig? = {
         do {
             return try loadConfig()
         } catch {

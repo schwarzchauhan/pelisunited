@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HorizontalListView: View{
     let header: String
-//    let titles = [ConstantsUrl.testTitleUrl, ConstantsUrl.testTitleUrl2, ConstantsUrl.testTitleUrl3]
     let titles: [Title]
+    let onSelect: (Title) -> Void
     
     
     var body: some View {
@@ -27,6 +27,9 @@ struct HorizontalListView: View{
                             ProgressView()
                         }
                         .frame(width: 200, height: 200)
+                        .onTapGesture {
+                            onSelect(title)
+                        }
                     }
                 }
             }
@@ -37,5 +40,7 @@ struct HorizontalListView: View{
 }
 
 #Preview {
-    HorizontalListView(header: Constants.trendingMovies, titles: Title.previewTitles)
+    HorizontalListView(header: Constants.trendingMovies, titles: Title.previewTitles) { title in
+        
+    }
 }
