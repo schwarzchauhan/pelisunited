@@ -69,6 +69,7 @@ struct HomeView: View {
                             HorizontalListView(header: Constants.topRatedTV, titles: viewModel.topRatedTV) { title in
                                 titleDetailPath.append(title)
                             }
+                            ComputedAsyncLearnView()
                         }
                         .navigationDestination(for: Title.self) { title in
                             TitleDetailView(title: title)
